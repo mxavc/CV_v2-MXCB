@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="robots" content="noindex">
+    <title>Página no encontrada | CV Marlon Chimarro</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='2' y='2' width='60' height='60' rx='14' fill='%23c8f03c' stroke='%2315211c' stroke-width='4'/%3E%3Ctext x='32' y='42' font-family='Consolas,Menlo,monospace' font-size='26' font-weight='800' fill='%2315211c' text-anchor='middle'%3EMc%3C/text%3E%3C/svg%3E">
+    <!--
+        Estilos en línea a propósito: GitHub Pages sirve este archivo para
+        CUALQUIER ruta inexistente (p. ej. /repo/a/b/c), así que una hoja de
+        estilos con ruta relativa podría no cargarse.
+    -->
+    <style>
+        :root {
+            --c-bg: #f4f2ea;
+            --c-surface: #fbfaf5;
+            --c-text: #15211c;
+            --c-muted: #4a5650;
+            --c-primary: #0b6150;
+            --c-accent: #c8f03c;
+            --c-on-accent: #15211c;
+            --c-grid: rgba(21, 33, 28, 0.045);
+            --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+            --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --c-bg: #0d1311;
+                --c-surface: #141c19;
+                --c-text: #e6ede8;
+                --c-muted: #a7b5ae;
+                --c-primary: #8de3c8;
+                --c-on-accent: #0d1311;
+                --c-grid: rgba(230, 237, 232, 0.035);
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 1rem;
+            font-family: var(--font-sans);
+            line-height: 1.65;
+            color: var(--c-text);
+            background-color: var(--c-bg);
+            background-image:
+                linear-gradient(var(--c-grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+        main {
+            max-width: 38rem;
+            padding: 2rem;
+            background: var(--c-surface);
+            border: 2px solid var(--c-text);
+            border-radius: 1.25rem;
+            box-shadow: 8px 8px 0 var(--c-text);
+        }
+        .code {
+            display: inline-block;
+            margin: 0;
+            padding: 0.25rem 0.7rem;
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--c-accent);
+            color: var(--c-on-accent);
+            border: 2px solid var(--c-text);
+            border-radius: 0.5rem;
+        }
+        h1 {
+            margin: 1rem 0;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 1.3rem + 3vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+        code { font-family: var(--font-mono); overflow-wrap: anywhere; color: var(--c-primary); }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-height: 44px;
+            margin-top: 0.5rem;
+            padding: 0.55rem 1.2rem;
+            font-weight: 700;
+            color: var(--c-bg);
+            background: var(--c-text);
+            border: 2px solid var(--c-text);
+            border-radius: 999px;
+            text-decoration: none;
+            transition: transform .18s, box-shadow .18s;
+        }
+        .btn:hover { background: var(--c-accent); color: var(--c-on-accent); transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--c-text); }
+        .btn:focus-visible { outline: 3px solid var(--c-primary); outline-offset: 3px; }
+        @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+        svg { width: 1.15em; height: 1.15em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="code">Error 404 · muestra no encontrada</p>
+        <h1>No encontramos esta página</h1>
+        <p>La dirección <code id="ruta">solicitada</code> no existe en este sitio. Puede que el enlace esté mal escrito o que la página se haya movido.</p>
+        <p>Todo el currículum está en una sola página. Desde el inicio puedes ir a Perfil, Experiencia, Educación, Proyectos, Habilidades o Contacto.</p>
+        <a class="btn" id="home" href="./" title="Ir a la página principal del currículum">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></svg>
+            Ir al inicio del CV
+        </a>
+    </main>
+    <script>
+        (function () {
+            var path = location.pathname;
+            document.getElementById('ruta').textContent = path;
+            // En un sitio de proyecto de GitHub Pages (usuario.github.io/<repo>/...)
+            // el inicio es el primer segmento de la ruta. "./" queda como respaldo sin JS.
+            if (/\.github\.io$/.test(location.hostname)) {
+                var first = path.split('/')[1];
+                document.getElementById('home').href = first ? '/' + first + '/' : '/';
+            }
+        })();
+    </script>
+</body>
+</html>
